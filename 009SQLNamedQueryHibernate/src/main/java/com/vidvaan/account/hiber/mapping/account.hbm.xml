@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.vidvaan.account.hiber.entity.Account">
+<id name="acNo">
+</id>
+<property name="acName"></property>
+<property name="acBalance"></property>
+
+</class>
+
+           <!--  <sql-query name="Account.find.all">
+			         <return alias="account" class="com.sekharit.hibernate.entity.Account"></return>
+			          SELECT {account.*} from ACCOUNT {account}
+		</sql-query>
+ -->
+ 
+ <!-- <sql-query name="Account.find.all">
+ <return alias="account" class="com.vidvaan.account.hiber.entity.Account"></return>
+select {account.*} from account {account}
+ </sql-query> -->
+ 
+ 		<sql-query name="Account.find.all">
+	     <return alias="a" class="com.vidvaan.account.hiber.entity.Account"></return>
+	     SELECT ACNO AS {a.acNo}, acNAME AS {a.acName}, acBALANCE AS {a.acBalance} FROM ACCOUNT {a}
+	</sql-query>
+ 
+
+
+</hibernate-mapping>

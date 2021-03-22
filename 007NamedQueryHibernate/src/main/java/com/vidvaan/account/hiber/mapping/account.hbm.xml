@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.vidvaan.account.hiber.entity.Account">
+<id name="acNo">
+</id>
+<property name="acName"></property>
+<property name="acBalance"></property>
+
+<query name="findAllAccounts">from Account</query>
+</class>
+<query name="findAllAccounts">from Account</query>
+<query name="Account.avgBalance">select avg(a.acBalance) from Account a</query>
+<query name="Account.byName">from Account a where a.acName = :name</query>
+<query name="Account.byBalance">from Account a where a.acBalance= :balance</query>
+
+</hibernate-mapping>
